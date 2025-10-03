@@ -13,7 +13,7 @@ document.getElementById("login-form").addEventListener("submit", function(e){
     // Hide login section
     document.getElementById("login-section").style.display = "none";
     const readingPage = document.getElementById("reading-page");
-    readingPage.style.display = "block";
+    readingPage.style.display = "flex";
     document.getElementById("user-name").textContent = id.toUpperCase();
 
     // Initially empty readings
@@ -36,7 +36,6 @@ document.getElementById("login-form").addEventListener("submit", function(e){
             list.innerHTML = ""; // clear "No records available"
             data.forEach(r => {
               const li = document.createElement("li");
-              // Only taste display
               li.textContent = `${r.taste}`;
               list.appendChild(li);
             });
@@ -61,14 +60,14 @@ document.getElementById("login-form").addEventListener("submit", function(e){
 // Logout button
 document.getElementById("logout").addEventListener("click", () => {
   document.getElementById("reading-page").style.display = "none";
-  document.getElementById("login-section").style.display = "block";
+  document.getElementById("login-section").style.display = "flex";
   document.getElementById("login-id").value = "";
   document.getElementById("login-password").value = "";
 });
 
 // 🌈 Gradient background: pastel shades (2x faster)
-let topHue = 200;
-let bottomHue = 180;
+let topHue = 200;    // top-left colour
+let bottomHue = 180; // bottom-right colour
 let topDir = 1;
 let bottomDir = 1;
 
