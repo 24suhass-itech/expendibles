@@ -8,11 +8,12 @@
 body, html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
-  transition: background 0.5s linear;
   scroll-behavior: smooth;
+  min-height: 100vh;
+  color: #111; /* dark text for visibility */
 }
 
-/* Navigation (scrolls with page) */
+/* Navigation */
 nav {
   width: 100%;
   display: flex;
@@ -21,21 +22,21 @@ nav {
   padding: 15px 30px;
   position: relative; /* scrolls with page */
   z-index: 100;
-  background: rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.2);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 nav .logo {
-  color: #fff;
   font-weight: bold;
   font-size: 1.2rem;
 }
 
 nav button {
   padding: 8px 15px;
-  border: 1px solid rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.3);
   border-radius: 8px;
   background: rgba(255,255,255,0.2);
-  color: #fff;
+  color: #111;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s;
@@ -58,7 +59,6 @@ section {
 
 /* Intro Section */
 .intro {
-  color: #fff;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -75,7 +75,6 @@ section {
 
 /* Login Section */
 .login-section h2 {
-  color: #fff;
   margin-bottom: 25px;
 }
 
@@ -93,24 +92,23 @@ form input {
   max-width: 320px;
   padding: 12px;
   margin: 8px 0;
-  border: 1px solid rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.3);
   border-radius: 8px;
   font-size: 1rem;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
+  background: rgba(255,255,255,0.2);
+  color: #111;
   transition: border-color 0.3s, background 0.3s;
   text-align: center;
 }
 
 form input::placeholder {
-  color: rgba(255,255,255,0.7);
-  text-align: center;
+  color: rgba(0,0,0,0.5);
 }
 
 form input:focus {
   border-color: #00d4ff;
   outline: none;
-  background: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.3);
 }
 
 form button {
@@ -119,8 +117,8 @@ form button {
   padding: 12px;
   margin-top: 12px;
   background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.7);
-  color: #fff;
+  border: 1px solid rgba(0,0,0,0.3);
+  color: #111;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 8px;
@@ -133,19 +131,17 @@ form button:hover {
   background: rgba(255,255,255,0.3);
 }
 
-/* Contact Info (right-justified at bottom of login section) */
+/* Contact Info */
 #contact-details {
   margin-top: 30px;
   font-size: 14px;
-  color: #fff;
-  text-align: right; /* right-aligned */
+  text-align: right;
   width: 100%;
 }
 
 /* Reading Page */
 #reading-page {
   display: none;
-  color: #fff;
   flex-direction: column;
   align-items: center;
 }
@@ -155,3 +151,16 @@ form button:hover {
 }
 
 #reading-list {
+  list-style: none;
+  padding: 0;
+}
+
+#reading-list li {
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
